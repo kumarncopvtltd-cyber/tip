@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="From Classroom to Career — real-world learning, industry insights and career readiness.">
+<title>IndustryBridge — From Classroom to Career</title>
+<style>
+:root{
+  --ink:#101828;--muted:#667085;--line:#e7eaf0;--bg:#f8f9fc;--white:#fff;
+  --accent:#5b5ce2;--accent2:#7c3aed;--dark:#0b1020;--soft:#eef0ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
+.logo{font-size:22px;font-weight:800;letter-spacing:-.7px}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:28px;color:#475467;font-size:14px;font-weight:600}
+.navlinks a:hover{color:var(--accent)}
+.cta{background:var(--dark);color:#fff;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:700}
+.hero{background:radial-gradient(circle at 78% 25%,#dddfff 0,transparent 28%),linear-gradient(135deg,#f7f8ff 0%,#fff 55%,#f4f0ff 100%);padding:70px 0 90px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(46px,6vw,76px);line-height:1.02;letter-spacing:-4px;max-width:720px}
+.gradient{background:linear-gradient(90deg,#4f46e5,#9333ea);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:640px;margin:25px 0 32px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:14px 21px;border-radius:10px;font-weight:750;font-size:14px}.primary{background:var(--dark);color:white}.secondary{background:white;border:1px solid var(--line)}
+.hero-card{background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(35,30,90,.13)}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.badge{font-size:11px;font-weight:800;background:var(--soft);color:var(--accent);padding:7px 10px;border-radius:999px}
+.bigquote{font-size:31px;line-height:1.15;letter-spacing:-1.3px;font-weight:750;margin-bottom:30px}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{background:#f8f9fc;border:1px solid #edf0f5;border-radius:15px;padding:16px}.mini b{display:block;font-size:13px}.mini span{font-size:12px;color:var(--muted)}
+.section{padding:105px 0}.light{background:var(--bg)}
+.section-head{max-width:760px;margin-bottom:50px}.kicker{color:var(--accent);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.1em;margin-bottom:12px}
+h2{font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-2px;margin-bottom:16px}
+.lead{font-size:18px;color:var(--muted)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}.story p{color:var(--muted);font-size:16px;margin-bottom:18px}
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 24px;font-size:24px;line-height:1.3;font-weight:750;margin-top:28px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.pillar{border:1px solid var(--line);border-radius:20px;padding:25px;background:#fff}.num{font-size:12px;color:var(--accent);font-weight:800}.pillar h3{margin:18px 0 8px;font-size:18px}.pillar p{font-size:14px;color:var(--muted)}
+.experience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.exp{padding:28px;border-radius:20px;background:#fff;border:1px solid var(--line)}.exp h3{font-size:18px;margin:16px 0 8px}.exp p{font-size:14px;color:var(--muted)}
+.icon{width:44px;height:44px;border-radius:13px;background:var(--soft);display:grid;place-items:center;color:var(--accent);font-weight:900}
+.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.aud{padding:30px;border-radius:22px;background:var(--dark);color:white;min-height:220px}.aud:nth-child(2){background:#171d32}.aud:nth-child(3){background:#202642}.aud p{color:#b9c0d0;font-size:14px;margin-top:10px}
+.belief{background:linear-gradient(135deg,#0b1020,#171d38);color:white;border-radius:30px;padding:65px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.belief h2{font-size:48px}.belief p{color:#b9c0d0}.belief-mark{font-size:100px;line-height:.7;color:#8b82ff;text-align:center}
+.footer{background:#080c18;color:white;padding:55px 0 30px}.footer-top{display:flex;justify-content:space-between;gap:30px}.footer p{color:#98a2b3;max-width:500px;font-size:14px}.footer-bottom{border-top:1px solid #202638;margin-top:40px;padding-top:20px;color:#667085;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:850px){
+ .navlinks{display:none}.hero-grid,.story,.belief{grid-template-columns:1fr}.hero{padding-top:45px}.pillars{grid-template-columns:1fr 1fr}.experience,.audience{grid-template-columns:1fr}.belief{padding:38px}.belief-mark{display:none}
+}
+@media(max-width:520px){h1{letter-spacing:-2.5px}.section{padding:75px 0}.pillars{grid-template-columns:1fr}.hero-card{padding:22px}.footer-top,.footer-bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">Industry<span>Bridge</span></a>
+    <nav class="navlinks">
+      <a href="#about">About</a><a href="#approach">Approach</a><a href="#experiences">Experiences</a><a href="#audiences">Who We Serve</a>
+    </nav>
+    <a class="cta" href="#connect">Partner With Us</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="dot"></span> Industry × Academia</div>
+   <h1>From <span class="gradient">Classroom</span> to Career.</h1>
+   <p>We connect students with the people, problems and possibilities of the real world — helping them turn academic knowledge into practical confidence and career readiness.</p>
+   <div class="actions"><a class="btn primary" href="#about">Discover Our Story</a><a class="btn secondary" href="#experiences">Explore Experiences</a></div>
+  </div>
+  <div class="hero-card">
+   <div class="card-top"><strong>Our belief</strong><span class="badge">REAL-WORLD LEARNING</span></div>
+   <div class="bigquote">“Learn from people who have done it.”</div>
+   <div class="mini-grid">
+    <div class="mini"><b>Industry Exposure</b><span>See how the real world works.</span></div>
+    <div class="mini"><b>Practical Learning</b><span>Solve meaningful problems.</span></div>
+    <div class="mini"><b>Career Readiness</b><span>Build skills that matter.</span></div>
+    <div class="mini"><b>Expert Connection</b><span>Learn directly from experience.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Why we exist</div><h2>Education beyond the classroom door.</h2><p class="lead">Students spend years building academic knowledge. We help them connect that knowledge to the way industries actually work.</p></div>
+  <div class="story">
+   <div>
+    <p>At TheIndustryPractice, we believe students deserve meaningful opportunities to understand the world they are preparing to enter. Real career readiness comes from more than textbooks and examinations.</p>
+    <p>It grows through conversations with experienced professionals, exposure to real projects, practical challenges, feedback, collaboration and the confidence to apply what they know.</p>
+    <div class="quote">We bring industry experience into the academic environment — and help students take their first steps toward the professional world.</div>
+   </div>
+   <div>
+    <p>We work with colleges, universities and industry professionals to create learning experiences that complement academic education.</p>
+    <p>From expert sessions and industry immersion programs to real-world case studies, team challenges and career-readiness experiences, our programs are designed around one goal:</p>
+    <p><strong>Help students understand what to learn, why it matters, and how it is used in the real world.</strong></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section light" id="approach">
+ <div class="container">
+  <div class="section-head"><div class="kicker">Our approach</div><h2>Four bridges between education and industry.</h2><p class="lead">Every experience is designed to move students from passive learning toward practical understanding.</p></div>
+  <div class="pillars">
+   <div class="pillar"><span class="num">01</span><h3>Industry Exposure</h3><p>Understand industries, business models, technologies, roles and workplace realities.</p></div>
+   <div class="pillar"><span class="num">02</span><h3>Practical Learning</h3><p>Apply knowledge through real-world cases, challenges, projects and problem solving.</p></div>
+   <div class="pillar"><span class="num">03</span><h3>Career Readiness</h3><p>Build the skills, behaviours and professional awareness needed for the workplace.</p></div>
+   <div class="pillar"><span class="num">04</span><h3>Industry Connection</h3><p>Create meaningful interactions between students, educators and experienced professionals.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="experiences">
+ <div class="container">
+  <div class="section-head"><div class="kicker">What we create</div><h2>Experiences that students remember.</h2><p class="lead">Not another lecture. Not another certificate. Experiences built around interaction, application and reflection.</p></div>
+  <div class="experience">
+   <div class="exp"><div class="icon">01</div><h3>Industry Immersion</h3><p>Structured programs that expose students to how companies, technologies and careers work.</p></div>
+   <div class="exp"><div class="icon">02</div><h3>Expert Sessions</h3><p>Direct conversations with professionals sharing their career journeys, lessons and practical insights.</p></div>
+   <div class="exp"><div class="icon">03</div><h3>Real-World Challenges</h3><p>Teams analyse problems, build solutions and present their thinking to industry experts.</p></div>
+   <div class="exp"><div class="icon">04</div><h3>Career Readiness</h3><p>Resume, LinkedIn, interview, communication and professional-development experiences.</p></div>
+   <div class="exp"><div class="icon">05</div><h3>Innovation & Hackathons</h3><p>Collaborative environments where students explore ideas and turn problems into possibilities.</p></div>
+   <div class="exp"><div class="icon">06</div><h3>Expert Feedback</h3><p>Practical feedback that helps students understand strengths, gaps and next steps.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section light" id="audiences">
+ <div class="container">
+  <div class="section-head"><div class="kicker">The ecosystem</div><h2>Built for the people shaping the next generation.</h2></div>
+  <div class="audience">
+   <div class="aud"><h3>For Colleges</h3><p>Complement academic programs with customized industry exposure, expert interaction and practical learning experiences aligned to institutional and departmental goals.</p></div>
+   <div class="aud"><h3>For Students</h3><p>Gain exposure, perspective, confidence and connections — while discovering the skills and career paths that can shape the next stage of your journey.</p></div>
+   <div class="aud"><h3>For Professionals</h3><p>Share your experience, mentor emerging talent and make a meaningful contribution to the next generation beyond your workplace.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="connect">
+ <div class="container">
+  <div class="belief">
+   <div><div class="kicker" style="color:#9b94ff">Our vision</div><h2>Make industry experience accessible to every student.</h2><p>We are building a trusted bridge between education and industry — one meaningful experience at a time.</p></div>
+   <div class="belief-mark">→</div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container">
+  <div class="footer-top">
+   <div><div class="logo">Industry<span>Bridge</span></div><p style="margin-top:12px">Real-World Learning • Industry Insights • Career Readiness</p></div>
+   <a class="cta" href="mailto:hello@TheIndustryPractice.com">Start a Conversation</a>
+  </div>
+  <div class="footer-bottom"><span>© 2026 TheIndustryPractice. All rights reserved.</span><span>From Classroom to Career.</span></div>
+ </div>
+</footer>
+</body>
+</html>
